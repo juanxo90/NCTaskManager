@@ -8,10 +8,8 @@ public class Task {
     int interval;
     boolean isActive;
 
-    // Constructors
+    // Constructors with arguments inside
     public Task(String title, int time) {
-        this.title = title;
-        this.time = time;
     }
 
     public Task(String title, int time, int start, int end) {
@@ -22,9 +20,13 @@ public class Task {
         this.interval = 0;
     }
 
-    // Getter and setters
+    // Getter
     public String getTitle() {
         return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getStart() {

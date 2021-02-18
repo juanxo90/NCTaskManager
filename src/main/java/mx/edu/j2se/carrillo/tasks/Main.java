@@ -3,7 +3,8 @@ package mx.edu.j2se.carrillo.tasks;
 public class Main {
 	public static void main(String[] args) {
 		Task task1 = new Task("Running", 2);
-		Task task2 = new Task("Running", 2, 0, 5);
+		Task task2 = new Task("Bike", 2, 0, 5);
+		task1.setTitle("jogging");
 //		task.getTime(6);
 //		task.getInterval();
 
