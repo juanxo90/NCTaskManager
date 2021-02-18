@@ -1,47 +1,49 @@
 package mx.edu.j2se.carrillo.tasks;
 
-import java.sql.Struct;
-
 public class Task {
     String title;
     int time;
+    int start;
     int end;
     int interval;
     boolean isActive;
 
-    // methods
-    public Task() {
+    // Constructors
+    public Task(String title, int time) {
         this.title = title;
+        this.time = time;
     }
 
-    public void interval() {
+    public Task(String title, int time, int start, int end) {
+        this.title = title;
+        this.time = time;
+        this.start = start;
+        this.end = end;
+        this.interval = 0;
     }
 
-    // getters
+    // Getter and setters
     public String getTitle() {
         return title;
     }
 
-    public int getTime(int i) {
+    public int getStart() {
+        return start;
+    }
+
+    public int getTime() {
         return time;
     }
 
+    public int getEnd() {
+        return end;
+    }
 
     public int getInterval() {
-        return interval;
+        return interval = end - start;
     }
 
-    // setters
-    public void setTime(int time) {
-        this.time = time;
+    public boolean isActive() {
+        return isActive;
     }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setInterval(int interval) {
-        this.interval = end - time;
-    }
-
 }
