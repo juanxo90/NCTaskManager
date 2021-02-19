@@ -22,7 +22,8 @@ public class Task {
         this.interval = 0;
     }
 
-    // Getter
+    // Getter and setter
+
     public String getTitle() {
         return title;
     }
@@ -31,23 +32,43 @@ public class Task {
         this.title = title;
     }
 
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
     public int getStart() {
         return start;
     }
 
-    public int getTime() {
-        return time;
+    public void setStart(int start) {
+        this.start = start;
     }
 
     public int getEnd() {
         return end;
     }
 
+    public void setEnd(int end) {
+        this.end = end;
+    }
+
     public int getInterval() {
-        return interval = end - start;
+        return interval;
+    }
+
+    public void setInterval(int interval) {
+        this.interval = interval;
     }
 
     public boolean isActive() {
         return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }
