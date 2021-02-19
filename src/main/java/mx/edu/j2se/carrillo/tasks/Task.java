@@ -7,6 +7,7 @@ public class Task {
     int end;
     int interval;
     boolean isActive;
+    int current;
 
     /**
      * Task manager main class for a repetitive and non-repetitive events
@@ -108,6 +109,26 @@ public class Task {
             return true;
         } else {
             return false;
+
         }
+    }
+
+    // Next time of execution
+
+    public void setCurrent(int current) {
+        this.current = current;
+    }
+
+    public int nextTimeAfter() {
+        if (isRepeated()) {
+            return 666;
+        }
+        else if (!isRepeated() && (current < time)){
+            return time - current;
+        }
+        else {
+            return -1;
+        }
+
     }
 }
