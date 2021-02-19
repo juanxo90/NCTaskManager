@@ -37,16 +37,30 @@ public class Task {
         this.title = title;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
     public void setTime(int time) {
         this.time = time;
     }
 
+    public void setTime(int start, int end, int interval) {
+        this.start = start;
+        this.end = end;
+        this.interval = interval;
+    }
+
     public void setStart(int start) {
         this.start = start;
+    }
+
+    public void setEnd(int end) {
+        this.end = end;
+    }
+
+    public void setInterval(int interval) {
+        this.interval = interval;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public int getStartTime() {
@@ -58,20 +72,12 @@ public class Task {
 
     }
 
-    public void setEnd(int end) {
-        this.end = end;
-    }
-
     public int getEndTime() {
         if (end != 0) {
             return end;
         } else {
             return time;
         }
-    }
-
-    public void setInterval(int interval) {
-        this.interval = interval;
     }
 
     public int getRepeatInterval() {
@@ -82,33 +88,26 @@ public class Task {
         }
     }
 
-//    public int getTime() {
-//        return time;
-//    }
-//
-//    public int getStart() {
-//        return start;
-//    }
-//
-//    public int getEnd() {
-//        return end;
-//    }
-//
-//    public int getInterval() {
-//        return interval;
-//    }
-
-
-
-
-
     // Control strings for active or non active task
     public boolean isActive() {
-        return isActive;
+        if (isActive) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void setActive(boolean active) {
-        this.isActive = active;
+    public void setActive(boolean isActive) {
+        this.isActive = isActive;
     }
 
+    // Control setting for isRepeated
+
+    public boolean isRepeated() {
+        if (end != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
