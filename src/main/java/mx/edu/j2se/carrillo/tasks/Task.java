@@ -10,6 +10,8 @@ public class Task {
 
     // Constructors with arguments inside
     public Task(String title, int time) {
+        this.title = title;
+        this.time = time;
     }
 
     public Task(String title, int time, int start, int end) {
