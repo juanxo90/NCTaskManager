@@ -25,64 +25,90 @@ public class Task {
         this.time = time;
     }
 
-    public Task(String title, int time, int start, int end, int interval) {
+    public Task(String title, int start, int end, int interval) {
         this.title = title;
-        this.time = time;
         this.start = start;
         this.end = end;
-        this.interval = 0;
+        this.interval = interval;
     }
 
     // Getter and setter
-
-    public String getTitle() {
-        return title;
-    }
-
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public int getTime() {
-        return time;
+    public String getTitle() {
+        return title;
     }
 
     public void setTime(int time) {
         this.time = time;
     }
 
-    public int getStart() {
-        return start;
-    }
-
     public void setStart(int start) {
         this.start = start;
     }
 
-    public int getEnd() {
-        return end;
+    public int getStartTime() {
+        if (start != 0) {
+            return start;
+        } else {
+            return time;
+        }
+
     }
 
     public void setEnd(int end) {
         this.end = end;
     }
 
-    public int getInterval() {
-        return interval;
+    public int getEndTime() {
+        if (end != 0) {
+            return end;
+        } else {
+            return time;
+        }
     }
 
     public void setInterval(int interval) {
         this.interval = interval;
     }
 
+    public int getRepeatInterval() {
+        if (interval != 0) {
+            return interval;
+        } else {
+            return 0;
+        }
+    }
+
+//    public int getTime() {
+//        return time;
+//    }
+//
+//    public int getStart() {
+//        return start;
+//    }
+//
+//    public int getEnd() {
+//        return end;
+//    }
+//
+//    public int getInterval() {
+//        return interval;
+//    }
+
+
+
+
+
+    // Control strings for active or non active task
     public boolean isActive() {
         return isActive;
     }
 
     public void setActive(boolean active) {
-        isActive = active;
+        this.isActive = active;
     }
-
-    // Control strings for active or non active task
 
 }
