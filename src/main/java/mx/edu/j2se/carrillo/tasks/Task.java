@@ -120,8 +120,14 @@ public class Task {
     }
 
     public int nextTimeAfter() {
-        if (isRepeated()) {
-            return 666;
+        if (isRepeated() && (current < start)) {
+            return start - current;
+        }
+        else if (isRepeated() && (end <= current + interval) ) {
+            return -1;
+        }
+        else if (isRepeated() && (start < current) ) {
+            return current + interval;
         }
         else if (!isRepeated() && (current < time)){
             return time - current;
